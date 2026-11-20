@@ -1,7 +1,7 @@
 <title>Umbral</title>
 <style>
 :root{ --paper:#ece7da; --ink:#201d17; --accent:#7a1f1f; --muted:#6b6354; --rule:#c9c0a6; }
-*{box-sizing:border-box;}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 html,body{margin:0;height:100%;}
 body{background:#0c0b09;font-family:Georgia,'Times New Roman',serif;color:var(--ink);overflow:hidden;}
 
@@ -114,8 +114,39 @@ blockquote{border-left:3px solid var(--accent);margin:22px 0;padding:4px 0 4px 2
 .clear{clear:both;}
 a{color:var(--accent);}
 
+@media (max-width:640px){
+  .portada-logo{width:80px;height:80px;margin-bottom:18px;}
+  .portada-title{font-size:48px;letter-spacing:.03em;}
+  .portada-slogan{font-size:11px;letter-spacing:.25em;margin-top:12px;}
+  .portada-enter{margin-top:36px;font-size:10px;padding:10px 20px;}
+
+  .page-indice{padding:40px 20px;}
+  .indice-head h1{font-size:30px;}
+  .indice-item{gap:14px;padding:14px 0;align-items:flex-start;}
+  .indice-item img{width:44px;height:44px;}
+  .indice-item .t{font-size:17px;}
+  .indice-item .q{font-size:11.5px;line-height:1.4;}
+  .indice-item .pagenum{font-size:12px;align-self:center;}
+
+  .art-wrap{padding:36px 18px 80px;}
+  h1.art-title{font-size:34px;}
+  .deck{font-size:12.5px;max-width:100%;}
+  .art p{font-size:15.5px;line-height:1.68;}
+  .art p.drop:first-letter{font-size:42px;padding:3px 5px 0 0;}
+  .pull{font-size:18px;margin:26px 0;}
+  h2.sub{font-size:21px;margin:30px 0 14px;}
+
+  .zhong-figure,.bell-figure,.qr-box{float:none;width:100%;max-width:220px;margin:0 auto 20px;display:block;}
+  .bell-figure{max-width:280px;}
+
+  .nav-arrow{width:36px;height:36px;font-size:15px;}
+  .toolbar{right:56px;top:10px;}
+  .toolbar button{font-size:10px;padding:7px 10px;}
+  .page-num-top{padding-left:18px;}
+}
+
 @media print{
-  body{overflow:visible;background:#fff;}
+  body{overflow:visible;background:var(--paper);}
   .book{height:auto;perspective:none;}
   .page{position:static;overflow:visible;transform:none !important;box-shadow:none !important;}
   .page-portada,.page-indice{display:none;}
